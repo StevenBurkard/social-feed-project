@@ -1,24 +1,30 @@
 import React, { useState } from 'react';
+import NavBar from './Components/NavBar/NavBar';
 
 
 function App() {
 
-  const [post, setPost] = useState([{name: "John Doe", post: "It's raining outside.."}])
+  const [posts, setPosts] = useState([{name: "John Doe", message: "It's raining outside.."}])
 
   return (
     <div>
       <table>
         <thead>
+          <NavBar />
             <tr>
               <th>Name</th>
-              <th>Post</th>
+              <th>Message</th>
             </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>John Doe</td>
-            <td>It's raining outside...</td>
-          </tr>
+          {posts.map((post) => {
+            return (
+              <tr>
+                <td>{post.name}</td>
+                <td>{post.message}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>
