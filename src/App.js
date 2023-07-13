@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import NavBar from './Components/NavBar/NavBar';
+import CreatePostForm from './Components/CreatePostForm/CreatePostForm';
 
 
 function App() {
@@ -8,25 +9,9 @@ function App() {
 
   return (
     <div>
-      <table>
-        <thead>
-          <NavBar />
-            <tr>
-              <th>Name</th>
-              <th>Message</th>
-            </tr>
-        </thead>
-        <tbody>
-          {posts.map((post) => {
-            return (
-              <tr>
-                <td>{post.name}</td>
-                <td>{post.message}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <NavBar />
+      <CreatePostForm />
+      
     </div>
   );
 }
