@@ -13,36 +13,45 @@ function App() {
     {name: "Michael Scott", message: "Well, Well, well how the turntables"}
   ]);
 
+  const AddToggleLike = (id) => {
+    const updatedPosts = posts.map(post =>
+      post.id === id ? { ...post, liked: !post.liked } : post
+    );
+    setPosts(updatedPosts);
+  };
+
   const AddNewPost = (newPost) => {
     setPosts([...posts, { id: posts.length + 1, ...newPost}]);
   }
 
 
   return (
-    <div className='container-fluid'>
-      <div className='row'>
-        <div className='col-md-20'>
-          <div className='border-box'>
-            <NavBar />
-          </div>
-      <div className='row'>
-        <div className='col-md-20'>
-          <div className='border-box'>
-            <CreatePostForm addPost={AddNewPost} />
+    <div id='body'>
+      <div className='container-fluid'>
+        <div className='row' id="navBar">
+          <div className='col-md-20'>
+            <div className='border-box'>
+              <NavBar />
+            </div>
           </div>
         </div>
-      </div>
-      <div className='row'>
-        <div className='col-md-20'>
-          <div className='border-box'>
-            <PostList posts={posts} />
+        <div className='row'>
+          <div className='col-md-20'>
+            <div className='border-box-two'>
+              <CreatePostForm addPost={AddNewPost} onToggleLike={AddToggleLike} />
+            </div>
           </div>
         </div>
-      </div>
+        <div className='row'>
+          <div className='col-md-20'>
+            <div className='border-box-two'>
+              <PostList posts={posts} />
+            </div>
+          </div>
         </div>
+        
       </div>
-      
-    </div>
+  </div>
   );
 }
 

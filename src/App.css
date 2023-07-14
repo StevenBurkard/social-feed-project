@@ -1,3 +1,15 @@
-.container-fluid{
-    background-color: #8FD694;
+#body{
+    background-color: #3AE6BA;
+}
+
+#navBar{
+    background-color: white;
+}
+
+
+
+.border-box-two{
+    box-shadow: 0px 20px 100px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 1em;
 }

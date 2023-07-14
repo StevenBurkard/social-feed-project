@@ -23,11 +23,10 @@ const CreatePostForm = ({ addPost }) => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="message"><h5>Post</h5></label><br></br>
-                    <textarea rows="5" cols="100" name="comment" form="usrform" onChange={(event) => setMessage(event.target.value)} value={message}>
-                    Enter text here...</textarea>
+                    <textarea rows="5" cols="100" name="comment" form="usrform" onChange={(event) => setMessage(event.target.value)} value={message}></textarea>
                 
                 </div>
-                <button type="submit" className="btn btn-primary">Create</button>
+                <button style={{ width: '100px' }} type="submit" className="btn btn-primary">Create</button>
             </div>
        </form>
      );
