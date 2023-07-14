@@ -8,23 +8,23 @@ const CreatePostForm = ({ addPost }) => {
     const sendSubmit = (e) => {
         e.preventDefault();
 
-        addPost({name, message});
+        addPost({name: name, message: message});
 
         setName('');
         setMessage('');
     }
 
     return ( 
-        <form>
+        <form onSubmit={sendSubmit}>
             <div className='form-group'>
-                <label for="fullName">Name</label>
-                <input type="text" className="form-control" id="fullName"></input>
+                <label htmlFor="fullName">Name</label>
+                <input type="text" className="form-control" id="fullName" onChange={(event) => setName(event.target.value)} value={name}></input>
             </div>
             <div className="form-group">
-                <label for="message">Post</label>
-                <input type="text" class="form-control" id="message"></input>
+                <label htmlFor="message">Post</label>
+                <input type="text" className="form-control" id="message" onChange={(event) => setMessage(event.target.value)} value={message}></input>
             </div>
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="submit" className="btn btn-primary">Create</button>
        </form>
      );
 }
