@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const CreatePostForm = ({ addPost }) => {
     const [name, setName] = useState('');
@@ -16,15 +16,19 @@ const CreatePostForm = ({ addPost }) => {
 
     return ( 
         <form onSubmit={sendSubmit}>
-            <div className='form-group'>
-                <label htmlFor="fullName">Name</label>
-                <input type="text" className="form-control" id="fullName" onChange={(event) => setName(event.target.value)} value={name}></input>
+            <div className='card mb-6'>
+                <div className='form-group'>
+                    <label htmlFor="fullName"><h5>Name</h5></label>
+                    <input type="text" className="form-control" id="fullName" onChange={(event) => setName(event.target.value)} value={name}></input>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="message"><h5>Post</h5></label><br></br>
+                    <textarea rows="5" cols="100" name="comment" form="usrform" onChange={(event) => setMessage(event.target.value)} value={message}>
+                    Enter text here...</textarea>
+                
+                </div>
+                <button type="submit" className="btn btn-primary">Create</button>
             </div>
-            <div className="form-group">
-                <label htmlFor="message">Post</label>
-                <input type="text" className="form-control" id="message" onChange={(event) => setMessage(event.target.value)} value={message}></input>
-            </div>
-            <button type="submit" className="btn btn-primary">Create</button>
        </form>
      );
 }
