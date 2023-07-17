@@ -4,6 +4,8 @@ import './App.css';
 import NavBar from './Components/NavBar/NavBar';
 import CreatePostForm from './Components/CreatePostForm/CreatePostForm';
 import PostList from './Components/PostList/PostList';
+import { ReactComponent as LikeIcon } from './Assets/LikeIcon.svg';
+//Couldn't figure out how to add LikeIcon into the PostList.
 
 
 function App() {
@@ -45,7 +47,7 @@ function App() {
         <div className='row'>
           <div className='col-md-20'>
             <div className='border-box-two'>
-              <PostList posts={posts} />
+              <PostList posts={posts}/>
             </div>
           </div>
         </div>
