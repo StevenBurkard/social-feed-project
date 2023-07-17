@@ -2,6 +2,7 @@ import React from 'react';
 import Post from '../Post/Post';
 import './PostList.css';
 
+
 const PostList = ({ posts, onToggleLike }) => {
     return ( 
         <div className='postList'>
